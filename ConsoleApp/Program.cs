@@ -6,8 +6,11 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            var runTasksStructs = new TasksStructs.Runner(new Runner());
-            runTasksStructs.Run();
+            var runnnerTasksStructs = new TasksStructs.Runner(new UI());
+            runnnerTasksStructs.Run();
+
+            var runnerTasksEnum = new TasksEnums.Runner(new UI());
+            runnerTasksEnum.Run();
         }
     }
 }
