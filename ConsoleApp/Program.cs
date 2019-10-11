@@ -11,6 +11,9 @@ namespace ConsoleApp
 
             var runnerTasksEnum = new TasksEnums.Runner(new UI());
             runnerTasksEnum.Run();
+
+            var runnerTasksExceptions = new TasksExceptions.Runner(new UI());
+            runnerTasksExceptions.RunTask5();
         }
     }
 }
