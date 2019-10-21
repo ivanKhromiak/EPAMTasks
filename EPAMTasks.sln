@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp", "ConsoleApp\Co
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TasksEnums", "TasksEnums\TasksEnums.csproj", "{E00C4BD7-EDAC-4D83-B450-D4F2DB402B7C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TasksExceptions", "TasksExceptions\TasksExceptions.csproj", "{1DBF86CE-1712-476B-B0B7-35D2C128BD27}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TasksExceptions", "TasksExceptions\TasksExceptions.csproj", "{1DBF86CE-1712-476B-B0B7-35D2C128BD27}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IOTasks", "IOTasks\IOTasks.csproj", "{23A1217E-80B3-44D9-B656-9CFF44D93750}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{1DBF86CE-1712-476B-B0B7-35D2C128BD27}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1DBF86CE-1712-476B-B0B7-35D2C128BD27}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1DBF86CE-1712-476B-B0B7-35D2C128BD27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23A1217E-80B3-44D9-B656-9CFF44D93750}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23A1217E-80B3-44D9-B656-9CFF44D93750}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23A1217E-80B3-44D9-B656-9CFF44D93750}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23A1217E-80B3-44D9-B656-9CFF44D93750}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

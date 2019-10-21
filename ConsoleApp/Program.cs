@@ -6,14 +6,17 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            var runnnerTasksStructs = new TasksStructs.Runner(new UI());
-            runnnerTasksStructs.Run();
+            //var runnnerTasksStructs = new TasksStructs.Runner(new UI());
+            //runnnerTasksStructs.Run();
 
-            var runnerTasksEnum = new TasksEnums.Runner(new UI());
-            runnerTasksEnum.Run();
+            //var runnerTasksEnum = new TasksEnums.Runner(new UI());
+            //runnerTasksEnum.Run();
 
-            var runnerTasksExceptions = new TasksExceptions.Runner(new UI());
-            runnerTasksExceptions.RunTask5();
+            //var runnerTasksExceptions = new TasksExceptions.Runner(new UI());
+            //runnerTasksExceptions.RunTask5();
+
+            var runnerTasksIO = new IOTasks.RunnerTaskIO(new UI());
+            runnerTasksIO.Run();
         }
     }
 }

@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\IOTasks\IOTasks.csproj" />
     <ProjectReference Include="..\TasksEnums\TasksEnums.csproj" />
     <ProjectReference Include="..\TasksExceptions\TasksExceptions.csproj" />
     <ProjectReference Include="..\TasksStructs\TasksStructs.csproj" />
