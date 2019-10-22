@@ -16,8 +16,6 @@ namespace ReflectionTasks
         public void Run()
         {
             var assemblyInfo = new AssemblyInfo();
-            UI.Write("Enter path:");
-            string path = UI.Read();
             List<string> assemblyStringInfo = assemblyInfo.GetAssemblyInfo();
             foreach (var item in assemblyStringInfo)
             {
