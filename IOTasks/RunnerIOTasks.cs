@@ -23,6 +23,18 @@ namespace IOTasks
             {
                 UI.Write(item);
             }
+
+            var searchingTxtInDirectory = new SearchingTxtInDirectory();
+            UI.Write("Enter path:");
+            path = UI.Read();
+            UI.Write("Enter name of .txt:");
+            string name = UI.Read();
+            List<string> foundedTxt = searchingTxtInDirectory.SearchTxtInDirectory(path, name);
+
+            foreach (var item in foundedTxt)
+            {
+                UI.Write(item);
+            }
         }
     }
 }
