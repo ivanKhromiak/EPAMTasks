@@ -4,29 +4,24 @@ using System.IO;
 
 namespace IOTasks
 {
-    internal class FileReader
+    internal class DirectoryReader
     {
-        public UserInterface.IUserInterface UI { get; private set; }
-        
-        public FileReader(UserInterface.IUserInterface UI)
+        internal List<string> GetContentFromDirectory(string path)
         {
-            this.UI = UI;
-        }
-
-        internal void showInfoDirectory(string path)
-        {
+            var contentFromDirectory = new List<string>();
             var directoryInfo = new DirectoryInfo(path);
             var directories = directoryInfo.GetDirectories();
             var files = directoryInfo.GetFiles();
             foreach (var file in files)
             {
-                UI.Write(file.FullName);
+                contentFromDirectory.Add(file.FullName);
             }
             foreach (var directory in directories)
             {
-                UI.Write(directory.FullName);
-                showInfoDirectory(directory.ToString());
+                contentFromDirectory.Add(directory.FullName);
+                contentFromDirectory.AddRange(GetContentFromDirectory(directory.ToString()));
             }
+            return contentFromDirectory;
         }
     }
 }

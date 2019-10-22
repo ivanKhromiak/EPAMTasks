@@ -15,7 +15,7 @@ namespace ConsoleApp
             //var runnerTasksExceptions = new TasksExceptions.Runner(new UI());
             //runnerTasksExceptions.RunTask5();
 
-            var runnerTasksIO = new IOTasks.RunnerTaskIO(new UI());
+            var runnerTasksIO = new IOTasks.RunnerIOTasks(new UI());
             runnerTasksIO.Run();
         }
     }
