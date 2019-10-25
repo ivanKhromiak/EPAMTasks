@@ -8,6 +8,11 @@ namespace IOTasks
     {
         internal List<string> GetContentFromDirectory(string path)
         {
+            if (!Directory.Exists(path))
+            {
+                throw new ArgumentException("No such path");
+            }
+
             var contentFromDirectory = new List<string>();
             var directoryInfo = new DirectoryInfo(path);
             var directories = directoryInfo.GetDirectories();

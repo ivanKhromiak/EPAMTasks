@@ -15,11 +15,11 @@ namespace ConsoleApp
             //var runnerTasksExceptions = new TasksExceptions.Runner(new UI());
             //runnerTasksExceptions.RunTask5();
 
-            //var runnerTasksIO = new IOTasks.RunnerIOTasks(new UI());
-            //runnerTasksIO.Run();
+            var runnerTasksIO = new IOTasks.RunnerIOTasks(new UI(), new Logger.CustomLogger(Logger.FileLog.WriteLog));
+            runnerTasksIO.Run();
 
-            var runnerReflectionTasks = new ReflectionTasks.ReflectionTasksRunner(new UI());
-            runnerReflectionTasks.Run();
+            //var runnerReflectionTasks = new ReflectionTasks.ReflectionTasksRunner(new UI());
+            //runnerReflectionTasks.Run();
         }
     }
 }
