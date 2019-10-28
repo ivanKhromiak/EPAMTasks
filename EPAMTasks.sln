@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TasksExceptions", "TasksExc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IOTasks", "IOTasks\IOTasks.csproj", "{23A1217E-80B3-44D9-B656-9CFF44D93750}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReflectionTasks", "ReflectionTasks\ReflectionTasks.csproj", "{3AA4E729-53FB-4341-A4D7-AA54C72E8574}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReflectionTasks", "ReflectionTasks\ReflectionTasks.csproj", "{3AA4E729-53FB-4341-A4D7-AA54C72E8574}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StyleCopTasks", "StyleCopTasks\StyleCopTasks.csproj", "{9E3A9EA0-EFAB-4E40-9C08-9DA0F98A061B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{3AA4E729-53FB-4341-A4D7-AA54C72E8574}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3AA4E729-53FB-4341-A4D7-AA54C72E8574}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3AA4E729-53FB-4341-A4D7-AA54C72E8574}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E3A9EA0-EFAB-4E40-9C08-9DA0F98A061B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E3A9EA0-EFAB-4E40-9C08-9DA0F98A061B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E3A9EA0-EFAB-4E40-9C08-9DA0F98A061B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E3A9EA0-EFAB-4E40-9C08-9DA0F98A061B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
