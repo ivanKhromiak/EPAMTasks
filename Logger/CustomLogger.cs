@@ -4,22 +4,36 @@ namespace Logger
 {
     public class CustomLogger: ILogger
     {
-        public CustomLogger(Action<string> WriteLog)
+        public static LoggingLevels MinLevel { get; set; }
+
+        public ILogBase LogBase { get; private set; }
+
+        public CustomLogger(ILogBase logBase, LoggingLevels minLevel)
         {
-            this.WriteLog = WriteLog; 
+            LogBase = logBase;
+            MinLevel = minLevel;
         }
 
-        private Action<string> WriteLog;
-
-        public void LogMessage(Exception e)
+        public void ChangeLogBase(ILogBase logBase)
         {
-            string details = GetExceptionDetails(e);
-            WriteLog(details);
+            LogBase = logBase;
         }
 
-        public void LogMessage(string message)
+        public void LogMessage(Exception e, LoggingLevels logginglevel)
         {
-            WriteLog(message);
+            if (logginglevel >= MinLevel)
+            {
+                string details = GetExceptionDetails(e);
+                LogBase.WriteLog(details);
+            }
+        }
+
+        public void LogMessage(string message, LoggingLevels logginglevel)
+        {
+            if (logginglevel >= MinLevel)
+            {
+                LogBase.WriteLog(message);
+            }
         }
 
         private string GetExceptionDetails(Exception e)

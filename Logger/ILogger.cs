@@ -6,8 +6,8 @@ namespace Logger
 {
     public interface ILogger
     {
-        void LogMessage(Exception e);
+        void LogMessage(Exception e, LoggingLevels loggingLevel);
 
-        void LogMessage(string message);
+        void LogMessage(string message, LoggingLevels loggingLevel);
     }
 }

@@ -5,11 +5,11 @@ using System.IO;
 
 namespace Logger
 {
-    public class FileLog
+    public class FileLog: ILogBase
     {
         private static readonly string path = @"C:\Users\Ivan\source\repos\EPAMTasks\Log.txt";
 
-        public static void WriteLog(string messege)
+        public void WriteLog(string messege)
         {
             if (!File.Exists(path))
             {
