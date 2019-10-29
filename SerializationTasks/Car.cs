@@ -16,6 +16,12 @@ namespace SerializationTasks
         [XmlElement]
         public int Price { get; set; }
 
+        public Car()
+        {
+            Name = "Noname";
+            Price = 0;
+        }
+
         public Car(string name, int price)
         {
             Name = name;

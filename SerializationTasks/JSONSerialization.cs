@@ -27,7 +27,11 @@ namespace SerializationTasks
 
         public object Deserialize()
         {
-            throw new NotImplementedException();
+            using (var streamReader = new StreamReader(FileName))
+            {
+                var serializer = new JsonSerializer();
+                return serializer.Deserialize(streamReader, SerializeType);
+            }
         }
     }
 }
