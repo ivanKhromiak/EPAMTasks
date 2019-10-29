@@ -46,11 +46,11 @@ namespace FileOperations
 
             foreach (var file in files)
             {
-                if (!_uniqueFiles.Add(file.FullName))
+                if (!_uniqueFiles.Add(Path.GetFileName(file.FullName)))
                 {
                     _dublicateCount++;
-                    _uniqueFiles.Remove(file.FullName);
-                    _dublicateFiles.Add(file.FullName);
+                    _uniqueFiles.Remove(Path.GetFileName(file.FullName));
+                    _dublicateFiles.Add(Path.GetFileName(file.FullName));
                 }
             }
 

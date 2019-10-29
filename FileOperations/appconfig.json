@@ -1,6 +1,6 @@
 {
-  "path1": "D:\\Games",
-  "path2": "D:\\Repository",
+  "path1": "D:\\Test\\Folder1",
+  "path2": "D:\\Test\\Folder2",
   "resultDestination": "Console",
   "pathToExcelFile": "D:\\test.xlsx"
 }
