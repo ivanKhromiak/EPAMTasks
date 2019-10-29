@@ -12,15 +12,19 @@ namespace FileOperations
 
         public Logger.ILogger Logger { get; }
 
-        public IConfigurationRoot Configuration { get; }
+        public static IConfigurationRoot Configuration { get; }
 
-        public Runner(UserInterface.IUserInterface ui, Logger.ILogger logger)
+        static Runner()
         {
             var builder = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+                .AddJsonFile("appconfig.json", optional: true, reloadOnChange: true);
             Configuration = builder.Build();
+        }
 
+        public Runner(UserInterface.IUserInterface ui, Logger.ILogger logger)
+        {
+            UI = ui;
             Logger = logger;
         }
 

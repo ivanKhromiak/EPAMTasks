@@ -1,14 +1,6 @@
 {
-  "exclude": [
-    "**/bin",
-    "**/bower_components",
-    "**/jspm_packages",
-    "**/node_modules",
-    "**/obj",
-    "**/platforms"
-  ],
-  "path1": "D:\\files\\dir1",
-  "path2": "D:\\files\\dir2",
+  "path1": "D:\\Games",
+  "path2": "D:\\Repository",
   "resultDestination": "Console",
   "pathToExcelFile": "D:\\test.xlsx"
 }

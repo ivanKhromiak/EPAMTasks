@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\FileOperations\FileOperations.csproj" />
     <ProjectReference Include="..\IOTasks\IOTasks.csproj" />
     <ProjectReference Include="..\Logger\Logger.csproj" />
     <ProjectReference Include="..\ReflectionTasks\ReflectionTasks.csproj" />
