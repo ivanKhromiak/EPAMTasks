@@ -18,7 +18,7 @@ namespace ConsoleApp
             //var runnerTasksIO = new IOTasks.RunnerIOTasks(new UI(), new Logger.CustomLogger(new Logger.FileLog(), Logger.LoggingLevels.Error));
             //runnerTasksIO.Run();
 
-            var runnerTaskSerialization = new SerializationTasks.Runner(new UI());
+            var runnerTaskSerialization = new SerializationTasks.Runner(new ConsoleUI());
             runnerTaskSerialization.Run();
 
             //var runnerReflectionTasks = new ReflectionTasks.ReflectionTasksRunner(new UI());

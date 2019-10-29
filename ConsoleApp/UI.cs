@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ConsoleApp
 {
-    class UI : UserInterface.IUserInterface
+    class ConsoleUI : UserInterface.IUserInterface
     {
         public string Read()
         {
