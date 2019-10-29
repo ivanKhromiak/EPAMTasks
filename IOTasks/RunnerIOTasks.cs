@@ -28,7 +28,7 @@ namespace IOTasks
             }
             catch (ArgumentException e)
             {
-                logger.LogMessage(e);
+                logger.LogMessage(e, Logger.LoggingLevels.Error);
             }
 
             foreach (var item in contentFormDirectory)
