@@ -6,10 +6,10 @@ namespace FileOperations
 {
     interface IDirectoryReader
     {
-        ICollection<string> GetFiles();
+        ICollection<string> GetUniqueFiles();
 
         ICollection<string> GetDublicateFiles();
 
-        int GetDublicateCount();
+        int GetCountOfDublicateFiles();
     }
 }

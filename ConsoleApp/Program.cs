@@ -24,34 +24,35 @@ namespace ConsoleApp
             //var runnerReflectionTasks = new ReflectionTasks.ReflectionTasksRunner(new UI());
             //runnerReflectionTasks.Run();
 
-            //UserInterface.IUserInterface ui;
+            UserInterface.IUserInterface ui;
 
-            //if (FileOperations.Runner.Configuration["resultDestination"] == "Console")
-            //{
-            //    ui = new ConsoleApp.ConsoleUI();
-            //}
-            //else
-            //{
-            //    ui = new ConsoleApp.ConsoleUI();
-            //}
-
-            //var runnerFileOperations = new FileOperations.Runner(ui, new Logger.CustomLogger(new Logger.FileLog(), Logger.LoggingLevels.Error));
-            //runnerFileOperations.Run();
-
-            var calc = new Calculation.Calc();
-
-            int Addition(int x, int y)
+            if (FileOperations.Runner.Configuration["resultDestination"] == "Console")
             {
-                return x + y;
+                ui = new ConsoleApp.ConsoleUI();
             }
-            Calculation.IWriter ui = new Calculation.ConsoleCalc();
+            else
+            {
+                ui = null;
+            }
 
-            int result = calc.calculation(int.Parse(ui.Read()), int.Parse(ui.Read()), Addition);
-            ui.Write(result.ToString());
+            var runnerFileOperations = 
+                new FileOperations.Runner(ui, new Logger.CustomLogger(new Logger.FileLog(), Logger.LoggingLevels.Error));
+            runnerFileOperations.Run();
 
-            ui = new Calculation.FileCalc();
-            result = calc.calculation(int.Parse(ui.Read()), int.Parse(ui.Read()), Addition);
-            ui.Write(result.ToString());
+            //var calc = new Calculation.Calc();
+
+            //int Addition(int x, int y)
+            //{
+            //    return x + y;
+            //}
+            //Calculation.IWriter ui = new Calculation.ConsoleCalc();
+
+            //int result = calc.calculation(int.Parse(ui.Read()), int.Parse(ui.Read()), Addition);
+            //ui.Write(result.ToString());
+
+            //ui = new Calculation.FileCalc();
+            //result = calc.calculation(int.Parse(ui.Read()), int.Parse(ui.Read()), Addition);
+            //ui.Write(result.ToString());
         }
     }
 }

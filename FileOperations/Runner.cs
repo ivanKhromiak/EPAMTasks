@@ -30,7 +30,8 @@ namespace FileOperations
 
         public void Run()
         {
-            var directoryReaderHashSet = new DirectoryReaderHashSet(Configuration["path1"], Configuration["path2"]);
+            var directoryReaderHashSet = 
+                new DirectoryReaderHashSet(Configuration["pathToSourceDirectory"], Configuration["pathToComparerDirectory"]);
             UI.Write("Dublicate files: ");
             foreach (var item in directoryReaderHashSet.GetDublicateFiles())
             {
@@ -38,10 +39,10 @@ namespace FileOperations
             }
 
             UI.Write("Count of dublicate files: ");
-            UI.Write(directoryReaderHashSet.GetDublicateCount().ToString());
+            UI.Write(directoryReaderHashSet.GetCountOfDublicateFiles().ToString());
 
             UI.Write("Unique files: ");
-            foreach (var item in directoryReaderHashSet.GetFiles())
+            foreach (var item in directoryReaderHashSet.GetUniqueFiles())
             {
                 UI.Write(item);
             }

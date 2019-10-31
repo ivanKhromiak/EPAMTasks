@@ -10,17 +10,10 @@ namespace FileOperations
 
         private HashSet<string> _dublicateFiles = new HashSet<string>();
 
-        private int _dublicateCount;
-
-        public DirectoryReaderHashSet(string path1, string path2)
+        public DirectoryReaderHashSet(string pathToSourceDirectory, string pathToComparerDirectory)
         {
-            GetFilesAndCountUnique(path1);
-            GetFilesAndCountUnique(path2);
-        }
-
-        public int GetDublicateCount()
-        {
-            return _dublicateCount;
+            _uniqueFiles = SetUniqueFiles(pathToSourceDirectory, pathToComparerDirectory);
+            _dublicateFiles = SetDublicateFiles(pathToSourceDirectory, pathToComparerDirectory);
         }
 
         public ICollection<string> GetDublicateFiles()
@@ -28,12 +21,17 @@ namespace FileOperations
             return _dublicateFiles;
         }
 
-        public ICollection<string> GetFiles()
+        public int GetCountOfDublicateFiles()
+        {
+            return _dublicateFiles.Count;
+        }
+
+        public ICollection<string> GetUniqueFiles()
         {
             return _uniqueFiles;
         }
 
-        private HashSet<string> GetFilesAndCountUnique(string path)
+        private HashSet<string> GetFiles(string path)
         {
             if (!Directory.Exists(path))
             {
@@ -42,24 +40,30 @@ namespace FileOperations
 
             var directoryInfo = new DirectoryInfo(path);
             var directories = directoryInfo.GetDirectories();
-            var files = directoryInfo.GetFiles();
+            var filesInfo = directoryInfo.GetFiles();
+            var files = new HashSet<string>();
 
-            foreach (var file in files)
+            foreach (var item in filesInfo)
             {
-                if (!_uniqueFiles.Add(Path.GetFileName(file.FullName)))
-                {
-                    _dublicateCount++;
-                    _uniqueFiles.Remove(Path.GetFileName(file.FullName));
-                    _dublicateFiles.Add(Path.GetFileName(file.FullName));
-                }
+                files.Add(Path.GetFileName(item.FullName));
             }
 
-            foreach (var directory in directories)
-            {
-                _uniqueFiles.UnionWith(GetFilesAndCountUnique(directory.ToString()));
-            }
+            return files;
+        }
 
-            return _uniqueFiles;
-        }  
+        private HashSet<string> SetDublicateFiles(string pathToSourceDirectory, string pathToComparerDirectory)
+        {
+            var dublicateFiles = GetFiles(pathToSourceDirectory);
+            dublicateFiles.IntersectWith(GetFiles(pathToComparerDirectory));
+            return dublicateFiles;
+        }
+
+        private HashSet<string> SetUniqueFiles(string pathToSourceDirectory, string pathToComparerDirectory)
+        {
+            var uniqueFiles = GetFiles(pathToSourceDirectory);
+            uniqueFiles.UnionWith(GetFiles(pathToComparerDirectory));
+            uniqueFiles.ExceptWith(_dublicateFiles);
+            return uniqueFiles;
+        }
     }
 }
