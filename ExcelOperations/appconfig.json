@@ -3,5 +3,5 @@
   "resultDestination": "Console",
   "pathToExcelFile": "D:\\Test\\test.xlsx",
   "sourceColumn": "4",
-  "comparerColumn":  "6"
+  "comparerColumn": "6"
 }

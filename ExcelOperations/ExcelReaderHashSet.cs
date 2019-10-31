@@ -21,7 +21,7 @@ namespace ExcelOperations
             return _uniqueValues;
         }
 
-        private HashSet<string> SetUnique(string path, int sourceColumn, int sourceComparer)
+        private HashSet<string> SetUnique(string path, int sourceColumn, int comparerColumn)
         {
             FileInfo file = new FileInfo(path);
 
@@ -31,21 +31,25 @@ namespace ExcelOperations
             using (ExcelPackage package = new ExcelPackage(file))
             {
                 ExcelWorksheet worksheet = package.Workbook.Worksheets[1];
-                int rowCount = worksheet.Dimension.Rows;
-                for (int i = 1; i < rowCount; i++)
+
+                int rowCaunt = 1;
+                while (worksheet.Cells[rowCaunt, sourceColumn].Value != null)
                 {
-                    source.Add(worksheet.Cells[i, sourceColumn].Value.ToString());
+                    source.Add(worksheet.Cells[rowCaunt, sourceColumn].Value.ToString());
+                    rowCaunt++;
                 }
 
-                for (int i = 1; i < rowCount; i++)
+                rowCaunt = 1;
+                while (worksheet.Cells[rowCaunt, comparerColumn].Value != null)
                 {
-                    comparer.Add(worksheet.Cells[i, sourceComparer].Value.ToString());
+                    comparer.Add(worksheet.Cells[rowCaunt, comparerColumn].Value.ToString());
+                    rowCaunt++;
                 }
             }
 
-            var unique = source;
+            var unique = new HashSet<string>(source);
             unique.UnionWith(comparer);
-            var dublicate = source;
+            var dublicate = new HashSet<string>(source);
             dublicate.IntersectWith(comparer);
             unique.ExceptWith(dublicate);
             return unique;

@@ -24,7 +24,7 @@ namespace ConsoleApp
             //var runnerReflectionTasks = new ReflectionTasks.ReflectionTasksRunner(new UI());
             //runnerReflectionTasks.Run();
 
-            //var runnerFileOperations = 
+            //var runnerFileOperations =
             //    new FileOperations.Runner(new Logger.CustomLogger(new Logger.FileLog(), Logger.LoggingLevels.Error));
             //runnerFileOperations.Run();
 

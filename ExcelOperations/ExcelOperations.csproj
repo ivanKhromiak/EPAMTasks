@@ -16,4 +16,10 @@
     <ProjectReference Include="..\UserInterface\UserInterface.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="appconfig.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
