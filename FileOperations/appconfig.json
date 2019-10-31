@@ -1,6 +1,6 @@
 {
   "pathToSourceDirectory": "D:\\Test\\Folder1",
   "pathToComparerDirectory": "D:\\Test\\Folder2",
-  "resultDestination": "Console",
-  "pathToExcelFile": "D:\\test.xlsx"
+  "resultDestination": "Excel",
+  "pathToExcelFile": "D:\\Test\\test.xlsx"
 }

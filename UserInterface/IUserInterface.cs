@@ -8,6 +8,6 @@ namespace UserInterface
     {
         string Read();
 
-        void Write(string message);
+        void Write(string input);
     }
 }

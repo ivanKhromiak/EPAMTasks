@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace ConsoleApp
+namespace UserInterface
 {
     public class ConsoleUI : UserInterface.IUserInterface
     {
@@ -11,9 +9,9 @@ namespace ConsoleApp
             return Console.ReadLine();
         }
 
-        public void Write(string message)
+        public void Write(string input)
         {
-            Console.WriteLine(message);
+            Console.WriteLine(input);
         }
     }
 }

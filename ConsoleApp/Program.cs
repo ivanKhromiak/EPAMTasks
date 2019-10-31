@@ -24,19 +24,8 @@ namespace ConsoleApp
             //var runnerReflectionTasks = new ReflectionTasks.ReflectionTasksRunner(new UI());
             //runnerReflectionTasks.Run();
 
-            UserInterface.IUserInterface ui;
-
-            if (FileOperations.Runner.Configuration["resultDestination"] == "Console")
-            {
-                ui = new ConsoleApp.ConsoleUI();
-            }
-            else
-            {
-                ui = null;
-            }
-
             var runnerFileOperations = 
-                new FileOperations.Runner(ui, new Logger.CustomLogger(new Logger.FileLog(), Logger.LoggingLevels.Error));
+                new FileOperations.Runner(new Logger.CustomLogger(new Logger.FileLog(), Logger.LoggingLevels.Error));
             runnerFileOperations.Run();
 
             //var calc = new Calculation.Calc();

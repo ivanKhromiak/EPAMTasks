@@ -22,9 +22,17 @@ namespace FileOperations
             Configuration = builder.Build();
         }
 
-        public Runner(UserInterface.IUserInterface ui, Logger.ILogger logger)
+        public Runner(Logger.ILogger logger)
         {
-            UI = ui;
+            if (Configuration["resultDestination"] == "Console")
+            {
+                UI = new UserInterface.ConsoleUI();
+            }
+            else if (Configuration["resultDestination"] == "Excel")
+            {
+                UI = new UserInterface.ExcelUI(Configuration["pathToExcelFile"]);
+            }
+
             Logger = logger;
         }
 
@@ -32,6 +40,7 @@ namespace FileOperations
         {
             var directoryReaderHashSet = 
                 new DirectoryReaderHashSet(Configuration["pathToSourceDirectory"], Configuration["pathToComparerDirectory"]);
+
             UI.Write("Dublicate files: ");
             foreach (var item in directoryReaderHashSet.GetDublicateFiles())
             {
