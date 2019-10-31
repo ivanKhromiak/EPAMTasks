@@ -23,7 +23,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SerializationTasks", "Seria
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileOperations", "FileOperations\FileOperations.csproj", "{64E035A7-5365-49F5-BABA-A99396A4C7E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculation", "Calculation\Calculation.csproj", "{184A832C-6437-4A77-8361-6EBC1C5FAF89}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calculation", "Calculation\Calculation.csproj", "{184A832C-6437-4A77-8361-6EBC1C5FAF89}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelOperations", "ExcelOperations\ExcelOperations.csproj", "{4B089FF4-A9EA-4353-9C2A-B333EA63462E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +77,10 @@ Global
 		{184A832C-6437-4A77-8361-6EBC1C5FAF89}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{184A832C-6437-4A77-8361-6EBC1C5FAF89}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{184A832C-6437-4A77-8361-6EBC1C5FAF89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B089FF4-A9EA-4353-9C2A-B333EA63462E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B089FF4-A9EA-4353-9C2A-B333EA63462E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B089FF4-A9EA-4353-9C2A-B333EA63462E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B089FF4-A9EA-4353-9C2A-B333EA63462E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

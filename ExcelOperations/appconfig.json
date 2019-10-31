@@ -1,0 +1,7 @@
+{
+  "pathToSourceFile": "D:\\Test\\source.xlsx",
+  "resultDestination": "Console",
+  "pathToExcelFile": "D:\\Test\\test.xlsx",
+  "sourceColumn": "4",
+  "comparerColumn":  "6"
+}
