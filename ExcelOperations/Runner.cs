@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using Microsoft.Extensions.Configuration;
 using System.IO;
 
@@ -38,6 +39,7 @@ namespace ExcelOperations
         {
             try
             {
+                Stopwatch watch = Stopwatch.StartNew();
                 int sourceColumn;
                 int.TryParse(Configuration["sourceColumn"], out sourceColumn);
                 int comparerColumn;
@@ -50,6 +52,8 @@ namespace ExcelOperations
                 {
                     UI.Write(item);
                 }
+                watch.Stop();
+                UI.Write("Elapsed time: " + watch.Elapsed.ToString());
             }
             catch(Exception e)
             {

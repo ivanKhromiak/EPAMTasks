@@ -1,8 +1,7 @@
 ﻿using System;
 using Microsoft.Extensions.Configuration;
 using System.IO;
-using System.Collections.Generic;
-using System.Text;
+using System.Diagnostics;
 
 namespace FileOperations
 {
@@ -40,6 +39,7 @@ namespace FileOperations
         {
             try
             {
+                Stopwatch watch = Stopwatch.StartNew();
                 var directoryReaderHashSet =
                     new DirectoryReaderHashSet(Configuration["pathToSourceDirectory"], Configuration["pathToComparerDirectory"]);
 
@@ -57,6 +57,8 @@ namespace FileOperations
                 {
                     UI.Write(item);
                 }
+                watch.Stop();
+                UI.Write("Elapsed time: " + watch.Elapsed.ToString());
             }
             catch(Exception e)
             {
