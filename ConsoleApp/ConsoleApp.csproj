@@ -6,6 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="NLog.Extensions.Logging" Version="1.6.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Calculation\Calculation.csproj" />
     <ProjectReference Include="..\ExcelOperations\ExcelOperations.csproj" />
     <ProjectReference Include="..\FileOperations\FileOperations.csproj" />

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Calculation
 {
-    public class ConsoleCalc : IWriter
+    internal class ConsoleCalc : IWriter
     {
         public string Read()
         {

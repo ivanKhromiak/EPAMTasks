@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Calculation
 {
-    public interface IWriter
+    internal interface IWriter
     {
         void Write(string input);
         string Read();

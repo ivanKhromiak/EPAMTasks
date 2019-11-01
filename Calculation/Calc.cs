@@ -2,7 +2,7 @@
 
 namespace Calculation
 {
-    public class Calc
+    internal class Calc
     {
         public int calculation(int x, int y, Func<int, int, int> func)
         {

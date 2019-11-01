@@ -9,7 +9,7 @@ namespace ExcelOperations
     {
         public UserInterface.IUserInterface UI { get; }
 
-        private Logger.ILogger _logger;
+        private NLog.ILogger _logger;
 
         public static IConfigurationRoot Configuration { get; }
 
@@ -21,7 +21,7 @@ namespace ExcelOperations
             Configuration = builder.Build();
         }
 
-        public Runner(Logger.ILogger logger)
+        public Runner(NLog.ILogger logger)
         {
             if (Configuration["resultDestination"] == "Console")
             {
@@ -47,7 +47,7 @@ namespace ExcelOperations
 
                 var excelDirectoryReader = new ExcelReaderHashSet(Configuration["pathToSourceFile"], sourceColumn, comparerColumn);
 
-                UI.Write("Unique files: ");
+                UI.Write("Unique values: ");
                 foreach (var item in excelDirectoryReader.GetUnique())
                 {
                     UI.Write(item);
@@ -57,7 +57,7 @@ namespace ExcelOperations
             }
             catch(Exception e)
             {
-                _logger.LogMessage(e, Logger.LoggingLevels.Error);
+                _logger.Error(e);
             }
         }
     }

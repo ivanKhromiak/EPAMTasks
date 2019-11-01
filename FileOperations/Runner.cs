@@ -9,7 +9,7 @@ namespace FileOperations
     {
         public UserInterface.IUserInterface UI { get; }
 
-        private Logger.ILogger _logger;
+        private NLog.ILogger _logger;
 
         public static IConfigurationRoot Configuration { get; }
 
@@ -21,7 +21,7 @@ namespace FileOperations
             Configuration = builder.Build();
         }
 
-        public Runner(Logger.ILogger logger)
+        public Runner(NLog.ILogger logger)
         {
             if (Configuration["resultDestination"] == "Console")
             {
@@ -62,7 +62,7 @@ namespace FileOperations
             }
             catch(Exception e)
             {
-                _logger.LogMessage(e, Logger.LoggingLevels.Error);
+                _logger.Error(e);
             }
         }
     }

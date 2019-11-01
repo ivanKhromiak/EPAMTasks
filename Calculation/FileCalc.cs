@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Calculation
 {
-    public class FileCalc : IWriter
+    internal class FileCalc : IWriter
     {
         private int _line = 0;
         public string Read()

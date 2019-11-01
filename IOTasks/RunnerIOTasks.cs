@@ -8,12 +8,12 @@ namespace IOTasks
     {
         private UserInterface.IUserInterface UI;
 
-        private Logger.ILogger logger;
+        private NLog.ILogger _logger;
 
-        public RunnerIOTasks(UserInterface.IUserInterface UI, Logger.ILogger Logger)
+        public RunnerIOTasks(UserInterface.IUserInterface UI, NLog.ILogger Logger)
         {
             this.UI = UI;
-            logger = Logger;
+            _logger = Logger;
         }
 
         public void Run()
@@ -28,7 +28,7 @@ namespace IOTasks
             }
             catch (ArgumentException e)
             {
-                logger.LogMessage(e, Logger.LoggingLevels.Error);
+                _logger.Error(e);
             }
 
             foreach (var item in contentFormDirectory)
