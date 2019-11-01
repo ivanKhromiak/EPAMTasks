@@ -65,7 +65,8 @@ namespace FileOperations
         private HashSet<string> SetUniqueFiles(string pathToSourceDirectory, string pathToComparerDirectory)
         {
             var uniqueFiles = GetFiles(pathToSourceDirectory);
-            uniqueFiles.SymmetricExceptWith(GetFiles(pathToComparerDirectory));
+            uniqueFiles.UnionWith(GetFiles(pathToComparerDirectory));
+            uniqueFiles.ExceptWith(_dublicateFiles);
             return uniqueFiles;
         }
     }

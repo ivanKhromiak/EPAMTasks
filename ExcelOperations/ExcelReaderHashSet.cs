@@ -47,8 +47,12 @@ namespace ExcelOperations
                 }
             }
 
-            source.SymmetricExceptWith(comparer);
-            return source;
+            var unique = new HashSet<string>(source);
+            unique.UnionWith(comparer);
+            var dublicate = new HashSet<string>(source);
+            dublicate.IntersectWith(comparer);
+            unique.ExceptWith(dublicate);
+            return unique;
         }
 
         private void Validate(string path, int sourceColumn, int sourceComparer)
