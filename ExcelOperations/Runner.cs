@@ -8,7 +8,7 @@ namespace ExcelOperations
     {
         public UserInterface.IUserInterface UI { get; }
 
-        public Logger.ILogger Logger { get; }
+        private Logger.ILogger _logger;
 
         public static IConfigurationRoot Configuration { get; }
 
@@ -31,22 +31,29 @@ namespace ExcelOperations
                 UI = new UserInterface.ExcelUI(Configuration["pathToExcelFile"]);
             }
 
-            Logger = logger;
+            _logger = logger;
         }
 
         public void Run()
         {
-            int sourceColumn;
-            int.TryParse(Configuration["sourceColumn"], out sourceColumn);
-            int comparerColumn;
-            int.TryParse(Configuration["comparerColumn"], out comparerColumn);
-
-            var excelDirectoryReader = new ExcelReaderHashSet(Configuration["pathToSourceFile"], sourceColumn, comparerColumn);
-
-            UI.Write("Unique files: ");
-            foreach (var item in excelDirectoryReader.GetUnique())
+            try
             {
-                UI.Write(item);
+                int sourceColumn;
+                int.TryParse(Configuration["sourceColumn"], out sourceColumn);
+                int comparerColumn;
+                int.TryParse(Configuration["comparerColumn"], out comparerColumn);
+
+                var excelDirectoryReader = new ExcelReaderHashSet(Configuration["pathToSourceFile"], sourceColumn, comparerColumn);
+
+                UI.Write("Unique files: ");
+                foreach (var item in excelDirectoryReader.GetUnique())
+                {
+                    UI.Write(item);
+                }
+            }
+            catch(Exception e)
+            {
+                _logger.LogMessage(e, Logger.LoggingLevels.Error);
             }
         }
     }

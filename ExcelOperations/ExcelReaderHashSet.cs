@@ -59,15 +59,19 @@ namespace ExcelOperations
         {
             if (string.IsNullOrEmpty(path))
             {
-                throw new ArgumentNullException();
+                throw new ArgumentNullException("The path is empty");
             }
             if (!File.Exists(path))
             {
-                throw new FileNotFoundException();
+                throw new FileNotFoundException("No such file" + path);
+            }
+            if (!path.EndsWith(".xlsx"))
+            {
+                throw new ArgumentException("The file is not Excel format");
             }
             if(sourceColumn <= 0 || sourceComparer <= 0)
             {
-                throw new ArgumentException();
+                throw new ArgumentOutOfRangeException("Coluns can't be less than zero or equal");
             }
         }
     }

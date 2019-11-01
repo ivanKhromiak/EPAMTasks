@@ -10,7 +10,7 @@ namespace FileOperations
     {
         public UserInterface.IUserInterface UI { get; }
 
-        public Logger.ILogger Logger { get; }
+        private Logger.ILogger _logger;
 
         public static IConfigurationRoot Configuration { get; }
 
@@ -33,27 +33,34 @@ namespace FileOperations
                 UI = new UserInterface.ExcelUI(Configuration["pathToExcelFile"]);
             }
 
-            Logger = logger;
+            _logger = logger;
         }
 
         public void Run()
         {
-            var directoryReaderHashSet = 
-                new DirectoryReaderHashSet(Configuration["pathToSourceDirectory"], Configuration["pathToComparerDirectory"]);
-
-            UI.Write("Dublicate files: ");
-            foreach (var item in directoryReaderHashSet.GetDublicateFiles())
+            try
             {
-                UI.Write(item);
+                var directoryReaderHashSet =
+                    new DirectoryReaderHashSet(Configuration["pathToSourceDirectory"], Configuration["pathToComparerDirectory"]);
+
+                UI.Write("Dublicate files: ");
+                foreach (var item in directoryReaderHashSet.GetDublicateFiles())
+                {
+                    UI.Write(item);
+                }
+
+                UI.Write("Count of dublicate files: ");
+                UI.Write(directoryReaderHashSet.GetCountOfDublicateFiles().ToString());
+
+                UI.Write("Unique files: ");
+                foreach (var item in directoryReaderHashSet.GetUniqueFiles())
+                {
+                    UI.Write(item);
+                }
             }
-
-            UI.Write("Count of dublicate files: ");
-            UI.Write(directoryReaderHashSet.GetCountOfDublicateFiles().ToString());
-
-            UI.Write("Unique files: ");
-            foreach (var item in directoryReaderHashSet.GetUniqueFiles())
+            catch(Exception e)
             {
-                UI.Write(item);
+                _logger.LogMessage(e, Logger.LoggingLevels.Error);
             }
         }
     }

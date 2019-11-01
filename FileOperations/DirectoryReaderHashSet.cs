@@ -33,9 +33,13 @@ namespace FileOperations
 
         private HashSet<string> GetFiles(string path)
         {
+            if (string.IsNullOrEmpty(path))
+            {
+                throw new ArgumentNullException("The path is empty"); 
+            }
             if (!Directory.Exists(path))
             {
-                throw new ArgumentException("No such path");
+                throw new DirectoryNotFoundException("No such path: " + path);
             }
 
             var directoryInfo = new DirectoryInfo(path);
