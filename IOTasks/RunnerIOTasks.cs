@@ -4,7 +4,7 @@ using System.Text;
 
 namespace IOTasks
 {
-    public class RunnerIOTasks
+    public class RunnerIOTasks: UserInterface.IRunnable
     {
         private UserInterface.IUserInterface UI;
 

@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 
 namespace SerializationTasks
 {
-    public class Runner
+    public class Runner: UserInterface.IRunnable
     {
         private UserInterface.IUserInterface UI;
 

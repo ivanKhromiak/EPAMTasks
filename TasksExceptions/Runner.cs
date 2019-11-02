@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TasksExceptions
 {
-    public class Runner
+    public class Runner: UserInterface.IRunnable
     {
         private UserInterface.IUserInterface UI;
 
@@ -13,7 +13,7 @@ namespace TasksExceptions
             this.UI = UI;
         }
 
-        public void RunTask4()
+        public void Run()
         {
             try
             {
@@ -28,10 +28,7 @@ namespace TasksExceptions
             {
                 UI.Write(e.Message);
             }
-        }
 
-        public void RunTask5()
-        {
             try
             {
                 ExceptionCaller.DoSomeMath(-8, 10);

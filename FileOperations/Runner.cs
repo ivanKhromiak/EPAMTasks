@@ -5,7 +5,7 @@ using System.Diagnostics;
 
 namespace FileOperations
 {
-    public class Runner
+    public class Runner: UserInterface.IRunnable
     {
         public UserInterface.IUserInterface UI { get; }
 

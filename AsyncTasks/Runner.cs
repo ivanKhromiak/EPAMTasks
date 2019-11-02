@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace AsyncTasks
 {
-    public class Runner
+    public class Runner: UserInterface.IRunnable
     {
         private UserInterface.IUserInterface UI;
 

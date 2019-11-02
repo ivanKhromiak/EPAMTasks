@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Calculation
 {
-    public class Runner
+    public class Runner: UserInterface.IRunnable
     {
         public void Run()
         {

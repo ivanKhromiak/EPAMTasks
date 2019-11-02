@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ReflectionTasks
 {
-    public class ReflectionTasksRunner
+    public class ReflectionTasksRunner: UserInterface.IRunnable
     {
         private UserInterface.IUserInterface UI;
 

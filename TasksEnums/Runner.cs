@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TasksEnums
 {
-    public class Runner
+    public class Runner: UserInterface.IRunnable
     {
         private UserInterface.IUserInterface UI;
 
