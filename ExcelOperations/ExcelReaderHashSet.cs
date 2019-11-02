@@ -59,7 +59,7 @@ namespace ExcelOperations
             }
             if (!File.Exists(path))
             {
-                throw new FileNotFoundException("No such file" + path);
+                throw new FileNotFoundException("No such file: " + path);
             }
             if (!path.EndsWith(".xlsx"))
             {

@@ -32,8 +32,11 @@ namespace ConsoleApp
             var runnerFileOperations = new FileOperations.Runner(_logger);
             runnerFileOperations.Run();
 
-            var runnerExcelOperations = new ExcelOperations.Runner(_logger);
-            runnerExcelOperations.Run();
+            //var runnerExcelOperations = new ExcelOperations.Runner(_logger);
+            //runnerExcelOperations.Run();
+
+            //var runnerAsync = new AsyncTasks.Runner(new UserInterface.ConsoleUI());
+            //runnerAsync.Run();
         }
     }
 }

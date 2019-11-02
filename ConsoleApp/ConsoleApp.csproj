@@ -6,10 +6,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="NLog.Extensions.Logging" Version="1.6.1" />
+    <PackageReference Include="NLog" Version="4.6.7" />
+    <PackageReference Include="NLog.Config" Version="4.6.7" />
+    <PackageReference Include="NLog.Schema" Version="4.6.7" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AsyncTasks\AsyncTasks.csproj" />
     <ProjectReference Include="..\Calculation\Calculation.csproj" />
     <ProjectReference Include="..\ExcelOperations\ExcelOperations.csproj" />
     <ProjectReference Include="..\FileOperations\FileOperations.csproj" />
@@ -21,6 +24,15 @@
     <ProjectReference Include="..\TasksExceptions\TasksExceptions.csproj" />
     <ProjectReference Include="..\TasksStructs\TasksStructs.csproj" />
     <ProjectReference Include="..\UserInterface\UserInterface.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="C:\Users\Ivan\.nuget\packages\nlog.config\4.6.7\contentFiles\any\any\NLog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="C:\Users\Ivan\.nuget\packages\nlog.schema\4.6.7\contentFiles\any\any\NLog.xsd">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

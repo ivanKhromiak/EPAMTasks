@@ -45,7 +45,10 @@ namespace UserInterface
             {
                 ExcelWorksheet worksheet = package.Workbook.Worksheets["Writing"];
                 if (worksheet == null)
+                {
                     worksheet = package.Workbook.Worksheets.Add("Writing");
+                }
+
                 worksheet.Cells[_rowForWriting, 1].Value = input;
                 _rowForWriting++;
                 package.Save();
