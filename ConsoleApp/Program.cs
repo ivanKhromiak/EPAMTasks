@@ -18,8 +18,7 @@ namespace ConsoleApp
             Console.WriteLine("7 - Excel operations tasks");
             Console.WriteLine("8 - Async tasks");
 
-            int choice;
-            if(!int.TryParse(Console.ReadLine(), out choice))
+            if(!int.TryParse(Console.ReadLine(), out var choice))
             {
                 Console.WriteLine("You enter invalid number");
                 return;

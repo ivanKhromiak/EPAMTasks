@@ -9,7 +9,7 @@ namespace ExcelOperations
     {
         public UserInterface.IUserInterface UI { get; }
 
-        private NLog.ILogger _logger;
+        private readonly NLog.ILogger _logger;
 
         public static IConfigurationRoot Configuration { get; }
 
@@ -39,11 +39,9 @@ namespace ExcelOperations
         {
             try
             {
-                Stopwatch watch = Stopwatch.StartNew();
-                int sourceColumn;
-                int.TryParse(Configuration["sourceColumn"], out sourceColumn);
-                int comparerColumn;
-                int.TryParse(Configuration["comparerColumn"], out comparerColumn);
+                var watch = Stopwatch.StartNew();
+                int.TryParse(Configuration["sourceColumn"], out var sourceColumn);
+                int.TryParse(Configuration["comparerColumn"], out var comparerColumn);
 
                 var excelDirectoryReader = new ExcelReaderHashSet(Configuration["pathToSourceFile"], sourceColumn, comparerColumn);
 

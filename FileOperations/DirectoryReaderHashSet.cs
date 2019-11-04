@@ -6,9 +6,9 @@ namespace FileOperations
 {
     class DirectoryReaderHashSet: IDirectoryReader
     {
-        private HashSet<string> _uniqueFiles = new HashSet<string>();
+        private HashSet<string> _uniqueFiles;
 
-        private HashSet<string> _dublicateFiles = new HashSet<string>();
+        private HashSet<string> _dublicateFiles;
 
         public DirectoryReaderHashSet(string pathToSourceDirectory, string pathToComparerDirectory)
         {
@@ -50,6 +50,11 @@ namespace FileOperations
             foreach (var item in filesInfo)
             {
                 files.Add(Path.GetFileName(item.FullName));
+            }
+
+            foreach (var directory in directories)
+            {
+                files.UnionWith(GetFiles(directory.ToString()));
             }
 
             return files;

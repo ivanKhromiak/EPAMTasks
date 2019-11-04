@@ -7,7 +7,7 @@ namespace ExcelOperations
 {
     class ExcelReaderHashSet: IExcelReader
     {
-        private HashSet<string> _uniqueValues = new HashSet<string>();
+        private readonly HashSet<string> _uniqueValues;
 
         public ExcelReaderHashSet(string path, int sourceColumn, int sourceComparer)
         {
@@ -23,27 +23,27 @@ namespace ExcelOperations
 
         private HashSet<string> SetUnique(string path, int sourceColumn, int comparerColumn)
         {
-            FileInfo file = new FileInfo(path);
+            var file = new FileInfo(path);
 
             var source = new HashSet<string>();
             var comparer = new HashSet<string>();
 
-            using (ExcelPackage package = new ExcelPackage(file))
+            using (var package = new ExcelPackage(file))
             {
                 ExcelWorksheet worksheet = package.Workbook.Worksheets[1];
 
-                int rowCaunt = 1;
-                while (worksheet.Cells[rowCaunt, sourceColumn].Value != null)
+                int rowCount = 1;
+                while (worksheet.Cells[rowCount, sourceColumn].Value != null)
                 {
-                    source.Add(worksheet.Cells[rowCaunt, sourceColumn].Value.ToString());
-                    rowCaunt++;
+                    source.Add(worksheet.Cells[rowCount, sourceColumn].Value.ToString());
+                    rowCount++;
                 }
 
-                rowCaunt = 1;
-                while (worksheet.Cells[rowCaunt, comparerColumn].Value != null)
+                rowCount = 1;
+                while (worksheet.Cells[rowCount, comparerColumn].Value != null)
                 {
-                    comparer.Add(worksheet.Cells[rowCaunt, comparerColumn].Value.ToString());
-                    rowCaunt++;
+                    comparer.Add(worksheet.Cells[rowCount, comparerColumn].Value.ToString());
+                    rowCount++;
                 }
             }
 
