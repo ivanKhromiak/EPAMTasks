@@ -15,10 +15,11 @@ namespace SerializationTasks
 
         public void Run()
         {
-            var cars = new List<Car>();
-            cars.Add(new Car("BMV", 50000));
-            cars.Add(new Car("Opel", 20000));
-            cars.Add(new Car("Nissan", 40000));
+            var cars = new List<Car> {
+                new Car("BMV", 50000),
+                new Car("Opel", 20000),
+                new Car("Nissan", 40000)
+            };
 
             var binarySerialization = new BinarySerialization("cars.bin", cars.GetType());
             var xmlSerialization = new XMLSerialization("cars.xml", cars.GetType());

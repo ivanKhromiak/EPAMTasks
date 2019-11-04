@@ -15,11 +15,9 @@ namespace AsyncTasks
         public void Run()
         {
             UI.Write("Enter n:");
-            int n;
-            int.TryParse(UI.Read(), out n);
+            int.TryParse(UI.Read(), out var n);
             UI.Write("Enter m:");
-            int m;
-            int.TryParse(UI.Read(), out m);
+            int.TryParse(UI.Read(), out var m);
             var random = new Random();
 
             var numbers = new int[n, m];

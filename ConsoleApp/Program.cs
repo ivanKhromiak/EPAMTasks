@@ -12,11 +12,12 @@ namespace ConsoleApp
             Console.WriteLine("1 - Enum tasks");
             Console.WriteLine("2 - Exceptions tasks");
             Console.WriteLine("3 - IO tasks");
-            Console.WriteLine("4 - Reflection tasks");
-            Console.WriteLine("5 - Calculation tasks");
-            Console.WriteLine("6 - File operations tasks");
-            Console.WriteLine("7 - Excel operations tasks");
-            Console.WriteLine("8 - Async tasks");
+            Console.WriteLine("4 - Serialization tasks");
+            Console.WriteLine("5 - Reflection tasks");
+            Console.WriteLine("6 - Calculation tasks");
+            Console.WriteLine("7 - File operations tasks");
+            Console.WriteLine("8 - Excel operations tasks");
+            Console.WriteLine("9 - Async tasks");
 
             if(!int.TryParse(Console.ReadLine(), out var choice))
             {

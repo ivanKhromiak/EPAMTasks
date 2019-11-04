@@ -11,9 +11,9 @@ namespace AsyncTasks
     {
         public static int Sum(int[,] numbers)
         {
-            var ParalelSums = new int[10];
+            var parallelSums = new int[10];
             int parts = numbers.GetLength(0) / 10;
-            Parallel.For(0, 9, (counter) =>
+            Parallel.For(0, 10, (counter) =>
             {
                 int sum = 0;
 
@@ -25,10 +25,10 @@ namespace AsyncTasks
                     }
                 }
 
-                ParalelSums[counter] = sum;
+                parallelSums[counter] = sum;
             });
 
-            return ParalelSums.Sum();
+            return parallelSums.Sum();
         }
     }
 }
