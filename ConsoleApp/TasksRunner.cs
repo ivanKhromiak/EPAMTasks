@@ -15,7 +15,7 @@ namespace ConsoleApp
         public TasksRunner()
         {
             var container = new Container();
-            container.RegisterSingleton<IUserInterface, ConsoleUI>(new ConsoleUI());
+            container.RegisterSingleton<IUserInterface, ConsoleUI>();
 
             _runners.Add(new TasksStructs.Runner(container.GetInstance<ConsoleUI>()));
             _runners.Add(new TasksEnums.Runner(container.GetInstance<ConsoleUI>()));

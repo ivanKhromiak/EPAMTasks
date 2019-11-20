@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Reflection;
 using System.Linq;
 
 namespace InversionOfControl
@@ -14,8 +13,9 @@ namespace InversionOfControl
             _registerTypes.Add(typeof(TImplementation), () => CreateInstance(typeof(TImplementation)));
         }
 
-        public void RegisterSingleton<TService, TImplementation>(TImplementation obj) where TImplementation : TService
+        public void RegisterSingleton<TService, TImplementation>() where TImplementation : TService
         {
+            var obj = CreateInstance(typeof(TImplementation));
             _registerTypes.Add(typeof(TImplementation), () => obj);
         }
 
