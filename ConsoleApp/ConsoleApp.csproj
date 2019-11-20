@@ -16,6 +16,7 @@
     <ProjectReference Include="..\Calculation\Calculation.csproj" />
     <ProjectReference Include="..\ExcelOperations\ExcelOperations.csproj" />
     <ProjectReference Include="..\FileOperations\FileOperations.csproj" />
+    <ProjectReference Include="..\InversionOfControl\InversionOfControl.csproj" />
     <ProjectReference Include="..\IOTasks\IOTasks.csproj" />
     <ProjectReference Include="..\Logger\Logger.csproj" />
     <ProjectReference Include="..\ReflectionTasks\ReflectionTasks.csproj" />

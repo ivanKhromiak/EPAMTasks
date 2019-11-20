@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using InversionOfControl;
+using UserInterface;
 
 namespace ConsoleApp
 {
@@ -12,16 +14,19 @@ namespace ConsoleApp
 
         public TasksRunner()
         {
-            _runners.Add(new TasksStructs.Runner(new UserInterface.ConsoleUI()));
-            _runners.Add(new TasksEnums.Runner(new UserInterface.ConsoleUI()));
-            _runners.Add(new TasksExceptions.Runner(new UserInterface.ConsoleUI()));
-            _runners.Add(new IOTasks.RunnerIOTasks(new UserInterface.ConsoleUI(), _logger));
-            _runners.Add(new SerializationTasks.Runner(new UserInterface.ConsoleUI()));
-            _runners.Add(new ReflectionTasks.ReflectionTasksRunner(new UserInterface.ConsoleUI()));
+            var container = new Container();
+            container.RegisterSingleton<IUserInterface, ConsoleUI>(new ConsoleUI());
+
+            _runners.Add(new TasksStructs.Runner(container.GetInstance<ConsoleUI>()));
+            _runners.Add(new TasksEnums.Runner(container.GetInstance<ConsoleUI>()));
+            _runners.Add(new TasksExceptions.Runner(container.GetInstance<ConsoleUI>()));
+            _runners.Add(new IOTasks.RunnerIOTasks(container.GetInstance<ConsoleUI>(), _logger));
+            _runners.Add(new SerializationTasks.Runner(container.GetInstance<ConsoleUI>()));
+            _runners.Add(new ReflectionTasks.ReflectionTasksRunner(container.GetInstance<ConsoleUI>()));
             _runners.Add(new Calculation.Runner());
             _runners.Add(new FileOperations.Runner(_logger));
             _runners.Add(new ExcelOperations.Runner(_logger));
-            _runners.Add(new AsyncTasks.Runner(new UserInterface.ConsoleUI()));
+            _runners.Add(new AsyncTasks.Runner(container.GetInstance<ConsoleUI>()));
         }
 
         public void Run(int choice)
