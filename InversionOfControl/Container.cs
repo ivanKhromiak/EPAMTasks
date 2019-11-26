@@ -19,13 +19,18 @@ namespace InversionOfControl
             _registerTypes.Add(typeof(TImplementation), () => obj);
         }
 
-        public TImplementation GetInstance<TImplementation>()
+        public TImplementation Resolve<TImplementation>()
         {
-            return (TImplementation)_registerTypes[typeof(TImplementation)]();
+            return (TImplementation)CreateInstance(typeof(TImplementation));
         }
 
         private object CreateInstance(Type type)
         {
+            if (_registerTypes.ContainsKey(type))
+            {
+                return _registerTypes[type];
+            }
+
             var constructor = type.GetConstructors()
                 .OrderByDescending(c => c.GetParameters().Length)
                 .First();
