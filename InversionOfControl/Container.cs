@@ -26,7 +26,8 @@ namespace InversionOfControl
 
         private object CreateInstance(Type type)
         {
-            if (_registerTypes.ContainsKey(type))
+            Func<object> registerType;
+            if (_registerTypes.TryGetValue(type, out registerType))
             {
                 return _registerTypes[type];
             }
