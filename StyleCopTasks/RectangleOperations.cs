@@ -18,8 +18,8 @@ namespace StyleCopTasks
         {
             if (IsIntersected(first, second))
             {
-                int[] xArray = { first.A.X, first.C.X, second.A.X, second.C.X };
-                int[] yArray = { first.A.Y, first.C.Y, second.A.Y, second.C.Y };
+                double[] xArray = { first.A.X, first.C.X, second.A.X, second.C.X };
+                double[] yArray = { first.A.Y, first.C.Y, second.A.Y, second.C.Y };
                 Array.Sort(xArray);
                 Array.Sort(yArray);
                 return new Rectangle(new Point(xArray[2], yArray[2]), new Point(xArray[1], yArray[1]));
@@ -32,22 +32,22 @@ namespace StyleCopTasks
             return (second.A.Y + second.Height) > first.A.Y && (first.A.X + first.Width) > second.C.X;
         }
 
-        private static int MaxX(Rectangle first, Rectangle second)
+        private static double MaxX(Rectangle first, Rectangle second)
         {
             return Math.Max(first.C.X, second.C.X);
         }
 
-        private static int MaxY(Rectangle first, Rectangle second)
+        private static double MaxY(Rectangle first, Rectangle second)
         {
             return Math.Max(first.C.Y, second.C.Y);
         }
 
-        private static int MinX(Rectangle first, Rectangle second)
+        private static double MinX(Rectangle first, Rectangle second)
         {
             return Math.Min(first.C.X, second.C.X);
         }
 
-        private static int MinY(Rectangle first, Rectangle second)
+        private static double MinY(Rectangle first, Rectangle second)
         {
             return Math.Min(first.C.Y, second.C.Y);
         }

@@ -12,7 +12,7 @@ namespace StyleCopTasks
 
         public Point D { get; private set; }
 
-        public int Height
+        public double Height
         {
             get
             {
@@ -20,7 +20,7 @@ namespace StyleCopTasks
             }
         }
 
-        public int Width
+        public double Width
         {
             get
             {
@@ -46,7 +46,7 @@ namespace StyleCopTasks
             D = new Point(c.X, a.Y);
         }
 
-        public void Move(int lenght = 0, int height = 0)
+        public void Move(double lenght = 0, double height = 0)
         {
             A.X += lenght;
             B.X += lenght;
@@ -59,7 +59,7 @@ namespace StyleCopTasks
             D.Y += height;
         }
 
-        public void ChangeSize(int lenght = 0, int height = 0)
+        public void ChangeSize(double lenght = 0, double height = 0)
         {
             D.X += lenght;
             C.X += lenght;
