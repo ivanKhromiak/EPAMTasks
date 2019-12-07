@@ -28,6 +28,11 @@ namespace StyleCopTasks
             }
         }
 
+        public override string ToString()
+        {
+            return $"Coordinates of regtangle is {A.X}:{A.Y}, {B.X}:{B.Y}, {C.X}:{C.Y}, {D.X}:{D.Y}";
+        }
+
         public Rectangle(Point a, Point c)
         {
             if (A.X != D.X || B.X != D.X)
