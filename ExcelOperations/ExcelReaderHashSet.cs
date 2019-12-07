@@ -23,12 +23,10 @@ namespace ExcelOperations
 
         private HashSet<string> SetUnique(string path, int sourceColumn, int comparerColumn)
         {
-            var file = new FileInfo(path);
-
             var source = new HashSet<string>();
             var comparer = new HashSet<string>();
 
-            using (var package = new ExcelPackage(file))
+            using (var package = ExcelFactory.CreateExcel(path))
             {
                 ExcelWorksheet worksheet = package.Workbook.Worksheets[1];
 
@@ -57,14 +55,17 @@ namespace ExcelOperations
             {
                 throw new ArgumentNullException("The path is empty");
             }
-            if (!File.Exists(path))
+
+            if (!File.Exists(path) && path != "OneDrive")
             {
                 throw new FileNotFoundException("No such file: " + path);
             }
-            if (!path.EndsWith(".xlsx"))
+
+            if (!path.EndsWith(".xlsx") && path != "OneDrive")
             {
                 throw new ArgumentException("The file is not Excel format");
             }
+
             if(sourceColumn <= 0 || sourceComparer <= 0)
             {
                 throw new ArgumentOutOfRangeException("Coluns can't be less than zero or equal");
