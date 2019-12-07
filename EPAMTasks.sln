@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.271
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.87
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TasksStructs", "TasksStructs\TasksStructs.csproj", "{CC59C93B-2D82-486C-9FF6-14FF7682987C}"
 EndProject
@@ -29,7 +29,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExcelOperations", "ExcelOpe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsyncTasks", "AsyncTasks\AsyncTasks.csproj", "{9042D2F7-3177-401D-B6F2-92E3688037A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InversionOfControl", "InversionOfControl\InversionOfControl.csproj", "{F3FF80D0-6B09-4C9D-BC26-E9FF0115A043}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InversionOfControl", "InversionOfControl\InversionOfControl.csproj", "{F3FF80D0-6B09-4C9D-BC26-E9FF0115A043}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StyleCopTasks", "StyleCopTasks\StyleCopTasks.csproj", "{2C90C359-D61D-453A-816C-DCAA4A2C4552}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OneDriveManipulation", "OneDriveManipulation\OneDriveManipulation.csproj", "{03C73F11-35E6-487C-879A-09832B68A651}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -93,6 +97,14 @@ Global
 		{F3FF80D0-6B09-4C9D-BC26-E9FF0115A043}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3FF80D0-6B09-4C9D-BC26-E9FF0115A043}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3FF80D0-6B09-4C9D-BC26-E9FF0115A043}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C90C359-D61D-453A-816C-DCAA4A2C4552}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C90C359-D61D-453A-816C-DCAA4A2C4552}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C90C359-D61D-453A-816C-DCAA4A2C4552}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C90C359-D61D-453A-816C-DCAA4A2C4552}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03C73F11-35E6-487C-879A-09832B68A651}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03C73F11-35E6-487C-879A-09832B68A651}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03C73F11-35E6-487C-879A-09832B68A651}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03C73F11-35E6-487C-879A-09832B68A651}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
