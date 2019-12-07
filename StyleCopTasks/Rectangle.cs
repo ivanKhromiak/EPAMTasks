@@ -72,5 +72,51 @@ namespace StyleCopTasks
             B.Y += height;
             C.Y += height;
         }
+
+        public Rectangle BuildSmallestFromTwoRectangels(Rectangle second)
+        {
+            var A = new Point(MinX(this, second), MinY(this, second));
+            var C = new Point(MaxX(this, second), MaxY(this, second));
+
+            return new Rectangle(A, C);
+        }
+
+        public Rectangle BuildІntersectionOfTwoRectangels(Rectangle second)
+        {
+            if (IsIntersected(this, second))
+            {
+                double[] xArray = { this.A.X, this.C.X, second.A.X, second.C.X };
+                double[] yArray = { this.A.Y, this.C.Y, second.A.Y, second.C.Y };
+                Array.Sort(xArray);
+                Array.Sort(yArray);
+                return new Rectangle(new Point(xArray[2], yArray[2]), new Point(xArray[1], yArray[1]));
+            }
+            return null;
+        }
+
+        private static bool IsIntersected(Rectangle first, Rectangle second)
+        {
+            return (second.A.Y + second.Height) > first.A.Y && (first.A.X + first.Width) > second.C.X;
+        }
+
+        private static double MaxX(Rectangle first, Rectangle second)
+        {
+            return Math.Max(first.C.X, second.C.X);
+        }
+
+        private static double MaxY(Rectangle first, Rectangle second)
+        {
+            return Math.Max(first.C.Y, second.C.Y);
+        }
+
+        private static double MinX(Rectangle first, Rectangle second)
+        {
+            return Math.Min(first.C.X, second.C.X);
+        }
+
+        private static double MinY(Rectangle first, Rectangle second)
+        {
+            return Math.Min(first.C.Y, second.C.Y);
+        }
     }
 }
