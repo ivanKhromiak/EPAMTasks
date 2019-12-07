@@ -15,9 +15,10 @@ namespace ConsoleApp
             Console.WriteLine("4 - Serialization tasks");
             Console.WriteLine("5 - Reflection tasks");
             Console.WriteLine("6 - Calculation tasks");
-            Console.WriteLine("7 - File operations tasks");
-            Console.WriteLine("8 - Excel operations tasks");
-            Console.WriteLine("9 - Async tasks");
+            Console.WriteLine("7 - StyleCop tasks");
+            Console.WriteLine("8 - File operations tasks");
+            Console.WriteLine("9 - Excel operations tasks");
+            Console.WriteLine("10 - Async tasks");
 
             if(!int.TryParse(Console.ReadLine(), out var choice))
             {

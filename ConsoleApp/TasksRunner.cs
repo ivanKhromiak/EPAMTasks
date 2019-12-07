@@ -20,6 +20,7 @@ namespace ConsoleApp
             _runners.Add(new SerializationTasks.Runner(new ConsoleUI()));
             _runners.Add(new ReflectionTasks.ReflectionTasksRunner(new ConsoleUI()));
             _runners.Add(new Calculation.Runner());
+            _runners.Add(new StyleCopTasks.Runner(new ConsoleUI()));
             _runners.Add(new FileOperations.Runner(_logger));
             _runners.Add(new ExcelOperations.Runner(_logger));
             _runners.Add(new AsyncTasks.Runner(new ConsoleUI()));

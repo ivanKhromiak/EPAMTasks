@@ -35,6 +35,11 @@ namespace StyleCopTasks
 
         public Rectangle(Point a, Point c)
         {
+            A = a;
+            B = new Point(a.X, c.Y);
+            C = c;
+            D = new Point(c.X, a.Y);
+
             if (A.X != D.X || B.X != D.X)
             {
                 throw new ArgumentException("Rectangle is not parallel to the x-axis");
@@ -44,11 +49,6 @@ namespace StyleCopTasks
             {
                 throw new ArgumentException("Rectangle is not parallel to the y-axis");
             }
-
-            A = a;
-            B = new Point(a.X, c.Y);
-            C = c;
-            D = new Point(c.X, a.Y);
         }
 
         public void Move(double lenght = 0, double height = 0)

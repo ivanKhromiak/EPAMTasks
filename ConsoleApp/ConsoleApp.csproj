@@ -21,6 +21,7 @@
     <ProjectReference Include="..\Logger\Logger.csproj" />
     <ProjectReference Include="..\ReflectionTasks\ReflectionTasks.csproj" />
     <ProjectReference Include="..\SerializationTasks\SerializationTasks.csproj" />
+    <ProjectReference Include="..\StyleCopTasks\StyleCopTasks.csproj" />
     <ProjectReference Include="..\TasksEnums\TasksEnums.csproj" />
     <ProjectReference Include="..\TasksExceptions\TasksExceptions.csproj" />
     <ProjectReference Include="..\TasksStructs\TasksStructs.csproj" />

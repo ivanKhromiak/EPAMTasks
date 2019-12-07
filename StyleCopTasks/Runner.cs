@@ -5,7 +5,7 @@ using UserInterface;
 
 namespace StyleCopTasks
 {
-    class Runner : IRunnable
+    public class Runner : IRunnable
     {
         private readonly IUserInterface _ui;
 
