@@ -39,16 +39,6 @@ namespace StyleCopTasks
             B = new Point(a.X, c.Y);
             C = c;
             D = new Point(c.X, a.Y);
-
-            if (A.X != D.X || B.X != D.X)
-            {
-                throw new ArgumentException("Rectangle is not parallel to the x-axis");
-            }
-
-            if (A.Y != B.Y || C.Y != D.Y)
-            {
-                throw new ArgumentException("Rectangle is not parallel to the y-axis");
-            }
         }
 
         public void Move(double lenght = 0, double height = 0)
@@ -89,14 +79,14 @@ namespace StyleCopTasks
                 double[] yArray = { this.A.Y, this.C.Y, second.A.Y, second.C.Y };
                 Array.Sort(xArray);
                 Array.Sort(yArray);
-                return new Rectangle(new Point(xArray[2], yArray[2]), new Point(xArray[1], yArray[1]));
+                return new Rectangle(new Point(xArray[1], yArray[1]), new Point(xArray[2], yArray[2]));
             }
             return null;
         }
 
         private static bool IsIntersected(Rectangle first, Rectangle second)
         {
-            return (second.A.Y + second.Height) > first.A.Y && (first.A.X + first.Width) > second.C.X;
+            return (second.A.Y + second.Height) > first.A.Y && (first.A.X + first.Width) > second.A.X;
         }
 
         private static double MaxX(Rectangle first, Rectangle second)
@@ -111,12 +101,12 @@ namespace StyleCopTasks
 
         private static double MinX(Rectangle first, Rectangle second)
         {
-            return Math.Min(first.C.X, second.C.X);
+            return Math.Min(first.A.X, second.A.X);
         }
 
         private static double MinY(Rectangle first, Rectangle second)
         {
-            return Math.Min(first.C.Y, second.C.Y);
+            return Math.Min(first.A.Y, second.A.Y);
         }
     }
 }
