@@ -13,7 +13,7 @@ This repository contains homeworks from EPAM .NET Lab №10.
 * [StyleCopTasks](StyleCopTasks) - tasks from Style Coding Training
 * [FileOperations](FileOperations) - realization of task about Files manipulation
 * [ExcelOperations](ExcelOperations) - realization of task about Excel's files manipulation
-* [OneDriveManipulation](OneDriveManipulation) - library for OneDriveoperations
+* [OneDriveManipulation](OneDriveManipulation) - library for OneDrive operations
 * [Calculation](Calculation) - realization of additional task
 * [AsyncTasks](AsyncTasks) - tasks from Asynchronous programming Training
 * [InversionOfControl](InversionOfControl) - my implementation of the IoC container
